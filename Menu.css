@@ -1,0 +1,323 @@
+*{
+    margin:0;
+    padding:0;
+    cursor:default;
+}
+
+
+:root{
+    --spacer-2:2rem;
+    --navBarWidth : calc( 100% - 2rem - 2rem );
+    --main-bg-color: #89B657;
+}
+
+nav{
+    height:6rem;
+    width: var(--navBarWidth);
+    /* background:linear-gradient(180deg,red,blue); */
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    margin-left:var(--spacer-2);
+    margin-right:var(--spacer-2);
+    border-radius:10px;
+    position:absolute;
+    z-index:10;
+    top:var(--spacer-2);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+@keyframes sliding {
+    0%{
+        transform:translateY(-100%);
+        opacity:0;
+    }
+    50%{
+        opacity:0.25;
+    }
+    
+    100%{
+        transform:translateY(0%);
+        opacity:1;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+}
+
+@keyframes slidingfadeout{
+    from{
+        transform:translateY(-40%);
+        opacity:1;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    }
+    50%{
+        transform:translateY(-70%);
+        opacity:0.1;
+    }
+    to{
+        transform:translateY(-100%);
+        opacity:0;
+        
+    }
+}
+nav img{
+    margin-left:10%;
+    height:100%;
+}
+
+.nav-options{
+    display:flex;
+    align-items:center;
+    gap:2rem;
+    margin-right:15%;
+    /* div container se bahar nikal ja rha h h4 nav-options ka mobile screen jane p */
+}
+
+.nav-options >*{
+    font-size:16px;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+}
+
+.menu-background{
+    max-height:33.7rem;
+    width:100%;
+    background:var(--main-bg-color);
+    /* background-image:url("greenChilly2.png"); */
+    background-repeat:no-repeat;
+    background-position:center;
+    aspect-ratio:16 / 9;
+    display:flex;
+    object-fit: cover;
+    justify-content:center;
+    align-items:center;
+}
+
+.menu-background h4{
+    font-size:4.5rem;
+    margin-top:5rem;
+    /* display:none; */
+    /* color:conic-gradient(var(--main-bg-color) 0deg 180deg,#ffffff 180deg 360deg); */
+    color:#fff;
+    letter-spacing:-3px;
+}
+
+.menu-background img{
+    width:30rem;
+    height:30rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    position:absolute;
+    right:0px;
+    bottom:5rem;
+
+}
+
+/* Menu CSS */
+.wrapper{
+    height:40rem;
+    width:100%;
+    /* background:linear-gradient(90deg,red,blue); */
+}
+
+.columns{
+    display:flex;
+    flex-wrap:wrap;
+    width:80%;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+
+.col{
+    /* background:rgba(225,255,255); */
+    padding:20px;
+    margin:2rem 0;
+    box-sizing: border-box;
+    border-radius:10px;
+}
+
+.column-left{
+    margin-left:3rem;
+    margin-right:1.5rem ;
+}
+
+.column-right{
+    margin-left:1.5rem;
+    margin-right:3rem;
+}
+
+.col-50{
+    width:calc(50% - 4.5rem);
+}
+
+.menu-item-container{
+    display:flex;
+    margin: 1rem 0 1rem 0rem;
+    width:calc(100% - 4rem);
+    /* justify-content: space-between/; */
+    white-space: nowrap;
+}
+
+section.menu-section{
+    height:auto;
+    margin:5rem 0 4rem 0;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.menu-likha-hua{
+    color:var(--main-bg-color);
+    font-size:2rem;
+    font-family: 'Permanent Marker', cursive;
+}
+
+heading{
+    font-family: 'Barlow', sans-serif;
+    font-size:64px;
+}
+
+.col > span{
+    font-family: 'Barlow', sans-serif;
+    font-size:35px;
+    margin-left:5rem;
+}
+
+.menu-name{
+    font-family: 'Barlow', sans-serif;
+    font-size:23px;
+    margin-left:7rem;
+    margin-top:2rem;
+}
+
+.item-price{
+    font-family: 'Barlow', sans-serif;
+    font-size:24px;
+    color:var(--main-bg-color);
+    margin-left:10rem;
+    margin-top:2rem;
+
+}
+
+@media screen and (max-width:768px){
+
+    .column-left,.column-right{
+        margin: 1rem 1.5rem;
+    }
+    
+    heading{
+        font-size:44px;
+    }
+    
+    .col-50{
+
+        width:calc(100% - 1.5rem);
+    }
+}
+
+@media screen and (max-width:320px){
+    heading{
+        font-size:34px;
+    }
+
+    span.name{
+        font-size:30px;
+        margin:1rem .5rem 1rem 0.5rem;
+        padding:1rem;
+        display:flex; 
+    }
+    
+}
+
+.card-container{
+    height:17rem;
+    width:100%;
+    margin:4rem 0 ;
+    display:flex;
+}
+
+.card-image{
+    height:100%;
+    width:80%;
+    background-color:aquamarine;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    border-radius:12px;
+    align-items:center;
+}
+
+.left-card{
+    margin:0 1rem 0 14rem;
+    background-color:#F7CFA5;
+}
+
+.right-card{
+    margin:0 14rem 0 1rem;
+    background-color:#71C9A6;
+}
+
+.design-circle{
+    position:absolute;
+    aspect-ratio: 1 / 1;
+    height:60%;
+    border-radius:50%;
+    right:2rem;
+    background-color:lightgreen;
+}
+
+.design-circle > *{
+    aspect-ratio:1 / 1;
+    width:8rem;
+    padding:20px;
+    background-position:center;
+}
+
+.circle-left-card{
+    background-color:#FFB970;
+}
+
+.circle-right-card{
+    background-color:#42BD8B;
+}
+
+
+
+
+/* contact of the developers */
+.social-site-cont{
+    position: fixed;
+    top: calc( 85% / 2);
+    right:0rem;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    border-radius:5px 0 0 5px;
+
+}
+
+.site{
+    font-size: 1rem;
+    color:chartreuse;
+    padding:10px;
+}
+
+
+.to-the-top-cont{
+    height:3rem;
+    width:3rem;
+    background-color:var(--main-bg-color);
+    position:fixed;
+    bottom:3rem;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    right:3rem;
+    border-radius:50%;
+}
+
